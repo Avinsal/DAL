@@ -54,18 +54,20 @@ int main()
     pm=Primefactorm(m);
     pn=Primefactorn(n);
     int* com=(int*)malloc(1024*sizeof(int));
+    int z=0;
     for(int i=0;i<20;i++)
     {
-        for(int j=1;j<20;j++)
+        for(int j=0;j<20;j++)
         {   
             if(pn[i]==pm[j])
             {           
+                z++;
                 com[i]=pn[i]=pm[j];
-                             
+                i++;           
             }
         }
     }
-    for(int i=0;i<1024;i++)
+    for(int i=0;i<z;i++)
     {
         printf("%d",com[i]);
     }
@@ -78,7 +80,7 @@ int main()
         }
     }
     printf("%d",cn);
-    if(cn=0)
+    if(cn==0)
     {
         printf("GCD is 1");
     }
